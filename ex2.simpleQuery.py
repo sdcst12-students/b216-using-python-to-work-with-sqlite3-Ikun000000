@@ -7,7 +7,7 @@ connection = sqlite3.connect(file)
 print(connection)
 
 cursor = connection.cursor()
-query = "select sqlite_version();"
+query = "select name from customers where name %startswith H"
 cursor.execute(query)
 result = cursor.fetchall()
 print(type(result))
